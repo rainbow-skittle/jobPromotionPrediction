@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Promotion Prediction Using ML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='templates/submit.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        nav {
+            width: 100%;
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .container {
+            padding: 2rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 1);
+            border-radius: 10px;
+            max-width: 80%;
+            margin-top: 5rem;
+        }
+        .main-image {
+            width: 100%;
+            height: auto;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 2.5rem;
+        }
+        @keyframes blink {
+        0% { opacity: 1.0; }
+        50% { opacity: 0.3; }
+        100% { opacity: 1.0; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/predict">Predict</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Employee Promotion Prediction</h1>
+        
+        <!-- <p>Eligibility status: {{text}}</p> -->
+        <div style="color: {{color}}; text-align: center; margin-bottom: 1rem; font-size: 2.5rem; animation: blink 1s infinite;">
+            <strong>Eligibility status:</strong> {{ text }}
+        </div>
+    </div>
+</body>
+</html>
